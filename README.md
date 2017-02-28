@@ -1,4 +1,4 @@
-# Udacity Android course developed apps
+# Udacity Android Basics Nanodegree course developed apps
 ### Android Basics: 
  
 | Sub-Course              | Apps built    |
