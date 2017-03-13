@@ -8,11 +8,13 @@ public class Quake {
     private double mMagnitude;
     private String mPlace;
     private long mDate;
+    private String mURL;
 
-    public Quake(double Mag, String Place, long Date){
+    public Quake(double Mag, String Place, long Date, String URL){
         mMagnitude = Mag;
         mPlace = Place;
         mDate = Date;
+        mURL = URL;
     }
     public double GetMag (){
         return mMagnitude;
@@ -22,6 +24,9 @@ public class Quake {
     }
     public long GetDate (){
         return mDate;
+    }
+    public String GetURL (){
+        return mURL;
     }
 
 }

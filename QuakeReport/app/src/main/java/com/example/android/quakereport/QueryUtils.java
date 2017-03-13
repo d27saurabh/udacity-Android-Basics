@@ -56,8 +56,9 @@ public final class QueryUtils {
                 double mag = prop.getDouble("mag");
                 String place = prop.getString("place");
                 long time = prop.getLong("time");
+                String url = prop.getString("url");
 
-                Quake currentQuake = new Quake(mag, place, time);
+                Quake currentQuake = new Quake(mag, place, time, url);
                 earthquakes.add(currentQuake);
             }
 
