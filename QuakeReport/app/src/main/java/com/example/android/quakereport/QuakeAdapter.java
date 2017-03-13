@@ -19,6 +19,8 @@ import java.util.Date;
  */
 public class QuakeAdapter extends ArrayAdapter<Quake> {
 
+    private static final String LOCATION_SEPARATOR = " of ";
+
     public QuakeAdapter(Activity activity, ArrayList<Quake> quakes) {
         super(activity, 0, quakes);
     }
@@ -36,8 +38,23 @@ public class QuakeAdapter extends ArrayAdapter<Quake> {
         TextView mag = (TextView) quakeItem.findViewById(R.id.magnitude);
         mag.setText(quake.GetMag());
 
+
+        // Location text split
+        String wholePlace = quake.GetPlace();
+        String primaryLocation;
+        String locationOffset;
+        if (wholePlace.contains(LOCATION_SEPARATOR)){
+            String[] parts = wholePlace.split(LOCATION_SEPARATOR);
+            locationOffset = parts[0] + LOCATION_SEPARATOR;
+            primaryLocation = parts[1];
+        }else {
+            locationOffset = getContext().getString(R.string.near_the);
+            primaryLocation = wholePlace;
+        }
         TextView place = (TextView) quakeItem.findViewById(R.id.place);
-        place.setText(quake.GetPlace());
+        TextView placeOffset = (TextView) quakeItem.findViewById(R.id.locationOffset);
+        placeOffset.setText(locationOffset);
+        place.setText(primaryLocation);
 
         // get time from Long - milisecs
         Date dateObject = new Date(quake.GetDate());
