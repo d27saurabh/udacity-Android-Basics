@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -33,21 +34,24 @@ public class QuakeAdapter extends ArrayAdapter<Quake> {
             quakeItem = LayoutInflater.from(getContext()).inflate(
                     R.layout.quake_item, parent, false);
         }
+        // current EarthQuake
         Quake quake = getItem(position);
 
+
+        // MAGNITUDE format "0.0" and set
         TextView mag = (TextView) quakeItem.findViewById(R.id.magnitude);
-        mag.setText(quake.GetMag());
+        mag.setText(formatMagnitude(quake.GetMag()));
 
 
-        // Location text split
+        // LOCATION text split
         String wholePlace = quake.GetPlace();
         String primaryLocation;
         String locationOffset;
-        if (wholePlace.contains(LOCATION_SEPARATOR)){
+        if (wholePlace.contains(LOCATION_SEPARATOR)) {
             String[] parts = wholePlace.split(LOCATION_SEPARATOR);
             locationOffset = parts[0] + LOCATION_SEPARATOR;
             primaryLocation = parts[1];
-        }else {
+        } else {
             locationOffset = getContext().getString(R.string.near_the);
             primaryLocation = wholePlace;
         }
@@ -56,7 +60,8 @@ public class QuakeAdapter extends ArrayAdapter<Quake> {
         placeOffset.setText(locationOffset);
         place.setText(primaryLocation);
 
-        // get time from Long - milisecs
+
+        // get TIME from Long - milisecs
         Date dateObject = new Date(quake.GetDate());
         //format it
         String formattedDate = formatDate(dateObject);
@@ -71,6 +76,7 @@ public class QuakeAdapter extends ArrayAdapter<Quake> {
 
         return quakeItem;
     }
+
     /**
      * Return the formatted date string (i.e. "Mar 3, 1984") from a Date object.
      */
@@ -85,5 +91,10 @@ public class QuakeAdapter extends ArrayAdapter<Quake> {
     private String formatTime(Date dateObject) {
         SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
         return timeFormat.format(dateObject);
+    }
+
+    private String formatMagnitude(double magnitude) {
+        DecimalFormat magnitudeFormat = new DecimalFormat("0.0");
+        return magnitudeFormat.format(magnitude);
     }
 }

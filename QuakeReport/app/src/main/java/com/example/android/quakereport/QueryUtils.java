@@ -53,9 +53,9 @@ public final class QueryUtils {
             for (int i = 0; i < quakes.length(); i++) {
                 JSONObject eQuake = quakes.getJSONObject(i);
                 JSONObject prop = eQuake.getJSONObject("properties");
-                String mag = prop.getString("mag");
+                double mag = prop.getDouble("mag");
                 String place = prop.getString("place");
-                Long time = prop.getLong("time");
+                long time = prop.getLong("time");
 
                 Quake currentQuake = new Quake(mag, place, time);
                 earthquakes.add(currentQuake);
