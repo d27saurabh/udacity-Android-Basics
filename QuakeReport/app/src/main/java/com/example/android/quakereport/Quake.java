@@ -7,9 +7,9 @@ package com.example.android.quakereport;
 public class Quake {
     private String mMagnitude;
     private String mPlace;
-    private String mDate;
+    private long mDate;
 
-    public Quake(String Mag, String Place, String Date){
+    public Quake(String Mag, String Place, long Date){
         mMagnitude = Mag;
         mPlace = Place;
         mDate = Date;
@@ -20,7 +20,7 @@ public class Quake {
     public String GetPlace (){
         return mPlace;
     }
-    public String GetDate (){
+    public long GetDate (){
         return mDate;
     }
 
