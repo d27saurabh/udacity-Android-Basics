@@ -41,10 +41,14 @@ import java.text.SimpleDateFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
-    /** Tag for the log messages */
+    /**
+     * Tag for the log messages
+     */
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
-    /** URL to query the USGS dataset for earthquake information */
+    /**
+     * URL to query the USGS dataset for earthquake information
+     */
     private static final String USGS_REQUEST_URL =
             "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-12-01&minmagnitude=7";
 
@@ -157,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
             String jsonResponse = "";
 
             // If url is null return early.....
-            if (url == null){
+            if (url == null) {
                 return jsonResponse;
             }
 
@@ -171,12 +175,14 @@ public class MainActivity extends AppCompatActivity {
                 urlConnection.connect();
 
                 // if it is 200-success
-                if (urlConnection.getResponseCode() == 200){
+                if (urlConnection.getResponseCode() == 200) {
                     inputStream = urlConnection.getInputStream();
                     jsonResponse = readFromStream(inputStream);
+                } else {
+                    Log.e(LOG_TAG, "status code is not 200 --" + urlConnection.getResponseCode());
                 }
             } catch (IOException e) {
-                // TODO: Handle the exception
+                Log.e(LOG_TAG, "json problem", e);
             } finally {
                 if (urlConnection != null) {
                     urlConnection.disconnect();
@@ -213,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
          */
         private Event extractFeatureFromJson(String earthquakeJSON) {
             // check if it is empty, return early
-            if (TextUtils.isEmpty(earthquakeJSON)){
+            if (TextUtils.isEmpty(earthquakeJSON)) {
                 return null;
             }
 
