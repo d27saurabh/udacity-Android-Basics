@@ -1,0 +1,85 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:20:1-47:12
+	package
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:22:5-49
+	android:versionName
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:24:5-30
+		INJECTED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml
+		INJECTED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:23:5-28
+		INJECTED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml
+		INJECTED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:21:5-63
+uses-permission#android.permission.INTERNET
+ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:27:5-67
+	android:name
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:27:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:28:5-79
+	android:name
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:28:22-76
+application
+ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:30:5-46:19
+MERGED from [com.android.support:gridlayout-v7:25.2.0] C:\Users\Admin\.android\build-cache\3cac92f1353a6ec0b85569c7bc0a9fa7bb4752c4\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:25.2.0] C:\Users\Admin\.android\build-cache\b1f498faa1411c1da43da3619414d70cc4f37c18\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Admin\.android\build-cache\9d14be37526d7c82e14a07479e04eb9e2b004a3f\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Admin\.android\build-cache\750d21c975dd9c35e6d62f4e21686214d9d48f33\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Admin\.android\build-cache\0e554076603876a5d96eab14712ab372e4eedafc\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Admin\.android\build-cache\79894258a7f06c81719186f480834f1a56bc489c\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Admin\.android\build-cache\e9be088235b86fc0ccb14eaae6970ece9e800d2b\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Admin\.android\build-cache\7476226e6af48cced558e02707bd79012a8be594\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Admin\.android\build-cache\2f3b6906cfba75871390602ee8543cd216d8ba84\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Admin\.android\build-cache\795024e843a79ccf5b80a6a0be7f5dd05e378535\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Admin\.android\build-cache\303938ab69516268d224aea41ee7458418991637\output\AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:31:9-41
+	android:allowBackup
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:34:9-35
+	android:icon
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:32:9-45
+	android:networkSecurityConfig
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:35:9-69
+	android:theme
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:33:9-44
+activity#com.example.android.networkconnect.MainActivity
+ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:36:9-45:20
+	android:label
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:38:13-45
+	android:uiOptions
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:39:13-57
+	android:name
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:37:13-75
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:41:13-44:29
+action#android.intent.action.MAIN
+ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:42:17-69
+	android:name
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:42:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:43:17-77
+	android:name
+		ADDED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml:43:27-74
+uses-sdk
+INJECTED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:gridlayout-v7:25.2.0] C:\Users\Admin\.android\build-cache\3cac92f1353a6ec0b85569c7bc0a9fa7bb4752c4\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:25.2.0] C:\Users\Admin\.android\build-cache\b1f498faa1411c1da43da3619414d70cc4f37c18\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Admin\.android\build-cache\9d14be37526d7c82e14a07479e04eb9e2b004a3f\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Admin\.android\build-cache\750d21c975dd9c35e6d62f4e21686214d9d48f33\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Admin\.android\build-cache\0e554076603876a5d96eab14712ab372e4eedafc\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Admin\.android\build-cache\79894258a7f06c81719186f480834f1a56bc489c\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Admin\.android\build-cache\e9be088235b86fc0ccb14eaae6970ece9e800d2b\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Admin\.android\build-cache\7476226e6af48cced558e02707bd79012a8be594\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Admin\.android\build-cache\2f3b6906cfba75871390602ee8543cd216d8ba84\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Admin\.android\build-cache\795024e843a79ccf5b80a6a0be7f5dd05e378535\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Admin\.android\build-cache\303938ab69516268d224aea41ee7458418991637\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Admin\.android\build-cache\9d14be37526d7c82e14a07479e04eb9e2b004a3f\output\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml
+		INJECTED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml
+		INJECTED from D:\projects\AndroidStudio Projects\udacity\NetworkConnect\Application\src\main\AndroidManifest.xml
