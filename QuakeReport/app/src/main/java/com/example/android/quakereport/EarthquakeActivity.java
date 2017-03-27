@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
      * This really only comes into play if you're using multiple loaders.
      */
     private static final int EARTHQUAKE_LOADER_ID = 1;
+    private TextView emptyText;
 
 
     @Override
@@ -48,8 +50,11 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
         setContentView(R.layout.earthquake_activity);
         Log.i(LOG_TAG,"TEST: Earthquake activity onCreate() called");
 
+
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView = (ListView) findViewById(R.id.list);
+        emptyText = (TextView) findViewById(R.id.empty_view);
+        earthquakeListView.setEmptyView(emptyText);
 
         // Create a new {@link ArrayAdapter} of earthquakes
         mAdapter = new QuakeAdapter(this, new ArrayList<Quake>());
@@ -90,6 +95,8 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
     @Override
     public void onLoadFinished(Loader<List<Quake>> loader, List<Quake> earthquakes) {
         Log.i(LOG_TAG,"TEST: onLoadFinished() called ...");
+        // Set empty state text to display "No earthquakes found."
+        emptyText.setText(R.string.no_earthquakes);
 
         // Clear the adapter of previous earthquake data
         mAdapter.clear();
