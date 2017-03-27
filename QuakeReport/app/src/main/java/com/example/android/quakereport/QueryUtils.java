@@ -24,8 +24,6 @@ import static com.example.android.quakereport.EarthquakeActivity.LOG_TAG;
  */
 public final class QueryUtils {
 
-
-
     /**
      * Create a private constructor because no one should ever create a {@link QueryUtils} object.
      * This class is only meant to hold static variables and methods, which can be accessed
@@ -52,7 +50,6 @@ public final class QueryUtils {
         // Return the {@link Event}
         return earthquake;
     }
-
 
     private static URL createUrl(String requestUrl) {
         URL url = null;
