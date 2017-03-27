@@ -17,13 +17,12 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.android.quakereport.EarthquakeActivity.LOG_TAG;
-
 /**
  * Helper methods related to requesting and receiving earthquake data from USGS.
  */
 public final class QueryUtils {
 
+    private static final String LOG_TAG = EarthquakeLoader.class.getName();
     /**
      * Create a private constructor because no one should ever create a {@link QueryUtils} object.
      * This class is only meant to hold static variables and methods, which can be accessed
@@ -33,6 +32,8 @@ public final class QueryUtils {
     }
 
     public static List<Quake> fetchEarthquakeData(String requestUrl) {
+        Log.i(LOG_TAG,"TEST: fetchEarthquakeData() called ...");
+
         // Create URL object
         URL url = createUrl(requestUrl);
 
