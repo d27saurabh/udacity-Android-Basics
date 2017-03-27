@@ -42,6 +42,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
      */
     private static final int EARTHQUAKE_LOADER_ID = 1;
     private TextView emptyText;
+    private View progressBar;
 
 
     @Override
@@ -95,6 +96,10 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
     @Override
     public void onLoadFinished(Loader<List<Quake>> loader, List<Quake> earthquakes) {
         Log.i(LOG_TAG,"TEST: onLoadFinished() called ...");
+
+        progressBar = findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.GONE);
+
         // Set empty state text to display "No earthquakes found."
         emptyText.setText(R.string.no_earthquakes);
 
@@ -104,7 +109,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
         // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
         if (earthquakes != null && !earthquakes.isEmpty()) {
-            mAdapter.addAll(earthquakes);
+            //mAdapter.addAll(earthquakes);
         }
     }
 
