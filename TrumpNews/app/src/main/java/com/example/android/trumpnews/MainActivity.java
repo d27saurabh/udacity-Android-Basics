@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private View progressBar;
     boolean isConnected;
     TextView emptyView;
-    private static final String TRUMP_REQUEST_URL = "http://content.guardianapis.com/search?q=trump&api-key=34db90f0-de3d-4c04-9e56-77557a355090";
+    private static final String TRUMP_REQUEST_URL = "http://content.guardianapis.com/search?q=trump";
     private static final int NEWS_LOADER_ID = 1;
 
     public void CheckInternetIsConnected(Context context) {
@@ -44,11 +44,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         CheckInternetIsConnected(this);
 
         Log.i(LOG_TAG, "TEST: MainActivity activity onCreate() called");
-
-        ArrayList<TrumpTweets> trumpTweets = new ArrayList<>();
-        trumpTweets.add(new TrumpTweets("Nuked north korea", "Politics", "10/10/10", "wwww.com"));
-        trumpTweets.add(new TrumpTweets("Built a WAll", "Politics", "10/10/10", "wwww.com"));
-        trumpTweets.add(new TrumpTweets("Nuked north korea", "Politics", "10/10/10", "wwww.com"));
 
         ListView newsListView = (ListView) findViewById(R.id.list);
         emptyView = (TextView) findViewById(R.id.empty_view);
@@ -84,7 +79,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public Loader<List<TrumpTweets>> onCreateLoader(int id, Bundle args) {
         Log.i(LOG_TAG, "TEST: onCreateLoader() called ...");
-        return new NewsLoader(this, TRUMP_REQUEST_URL);
+
+        Uri baseUri = Uri.parse(TRUMP_REQUEST_URL);
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        uriBuilder.appendQueryParameter("api-key", "34db90f0-de3d-4c04-9e56-77557a355090");
+
+        uriBuilder.appendQueryParameter("order-by", "newest");
+
+        return new NewsLoader(this, uriBuilder.toString());
     }
 
 
