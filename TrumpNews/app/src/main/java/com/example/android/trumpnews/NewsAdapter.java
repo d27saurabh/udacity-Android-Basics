@@ -34,10 +34,18 @@ public class NewsAdapter extends ArrayAdapter<TrumpTweets> {
         TextView title = (TextView) tweet.findViewById(R.id.news_title);
         TextView section = (TextView) tweet.findViewById(R.id.section_name);
         TextView date = (TextView) tweet.findViewById(R.id.news_date);
+        TextView time = (TextView) tweet.findViewById(R.id.news_time);
 
         title.setText(trumpTweets.getTitle());
         section.setText(trumpTweets.getSectionName());
-        date.setText(trumpTweets.getPublicationDate());
+
+        String dateToFix = trumpTweets.getPublicationDate();
+        String[] parts = dateToFix.split("T");
+
+        date.setText(parts[0]);
+
+        parts[1] = parts[1].substring(0, parts[1].length() - 1);
+        time.setText(parts[1]);
 
         return tweet;
     }
