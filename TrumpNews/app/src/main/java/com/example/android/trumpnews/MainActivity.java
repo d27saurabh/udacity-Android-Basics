@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         // Set empty state text to display "No earthquakes found."
         emptyView.setText(R.string.no_news);
-        // Clear the adapter of previous earthquake data
+        // Clear the adapter  of previous earthquake data
         adapter.clear();
 
         if (data != null && !data.isEmpty()) {
@@ -114,4 +114,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         // Loader reset, so we can clear out our existing data.
         adapter.clear();
     }
+
 }
+
