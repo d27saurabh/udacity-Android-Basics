@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:background="#322e8c"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/section_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                tools:text="Section Name" />
+
+            <TextView
+                android:id="@+id/news_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:textColor="#9db395"
+                android:textSize="14sp"
+                tools:text="date" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="3"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            tools:text="TRUMP TITLE" />
+
+    </LinearLayout>
+
+</LinearLayout>
