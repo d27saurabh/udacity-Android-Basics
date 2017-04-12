@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private View progressBar;
     boolean isConnected;
     TextView emptyView;
-    private static final String TRUMP_REQUEST_URL = "";
+    private static final String TRUMP_REQUEST_URL = "http://content.guardianapis.com/search?q=trump&api-key=34db90f0-de3d-4c04-9e56-77557a355090";
     private static final int NEWS_LOADER_ID = 1;
 
     public void CheckInternetIsConnected(Context context) {
@@ -53,8 +53,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         ListView newsListView = (ListView) findViewById(R.id.list);
         emptyView = (TextView) findViewById(R.id.empty_view);
         newsListView.setEmptyView(emptyView);
-
-        adapter = new NewsAdapter(this, trumpTweets);
+        adapter = new NewsAdapter(this, new ArrayList<TrumpTweets>());
         newsListView.setAdapter(adapter);
 
         newsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -84,16 +83,32 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<List<TrumpTweets>> onCreateLoader(int id, Bundle args) {
-        return null;
+        Log.i(LOG_TAG, "TEST: onCreateLoader() called ...");
+        return new NewsLoader(this, TRUMP_REQUEST_URL);
     }
+
 
     @Override
     public void onLoadFinished(Loader<List<TrumpTweets>> loader, List<TrumpTweets> data) {
+        Log.i(LOG_TAG, "TEST: onLoadFinished() called ...");
+        progressBar = findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.GONE);
 
+        // Set empty state text to display "No earthquakes found."
+        emptyView.setText(R.string.no_news);
+        // Clear the adapter of previous earthquake data
+        adapter.clear();
+
+        if (data != null && !data.isEmpty()) {
+            adapter.addAll(data);
+        }
     }
 
     @Override
     public void onLoaderReset(Loader<List<TrumpTweets>> loader) {
+        Log.i(LOG_TAG, "TEST: onLoaderRESET() called ...");
 
+        // Loader reset, so we can clear out our existing data.
+        adapter.clear();
     }
 }
