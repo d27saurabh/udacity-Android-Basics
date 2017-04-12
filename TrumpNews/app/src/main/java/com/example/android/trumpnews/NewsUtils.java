@@ -121,7 +121,8 @@ public final class NewsUtils {
         try {
 
             JSONObject reader = new JSONObject(newsJSON);
-            JSONArray news = reader.getJSONArray("results");
+            JSONObject response = reader.getJSONObject("response");
+            JSONArray news = response.getJSONArray("results");
 
             for (int i = 0; i < news.length(); i++) {
                 JSONObject Data = news.getJSONObject(i);
