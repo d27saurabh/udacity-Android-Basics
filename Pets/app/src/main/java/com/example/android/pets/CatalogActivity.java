@@ -119,4 +119,10 @@ public class CatalogActivity extends AppCompatActivity {
             cursor.close();
         }
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        displayDatabaseInfo();
+    }
 }
