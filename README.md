@@ -1,4 +1,4 @@
-# Udacity
+# Udacity  <img src="https://www.underconsideration.com/brandnew/archives/udacity_logo.png" alt="Softuni Logo" width="150" align="right"/>
 ### Android Basics: 
  
 | Sub-Course              | Apps built    | Topics covered    |
