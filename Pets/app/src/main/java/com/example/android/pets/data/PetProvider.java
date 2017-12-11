@@ -10,6 +10,7 @@ import android.net.Uri;
  */
 public class PetProvider extends ContentProvider {
 
+    private PetDBHelper DbHelper;
     /** Tag for the log messages */
     public static final String LOG_TAG = PetProvider.class.getSimpleName();
 
@@ -18,9 +19,7 @@ public class PetProvider extends ContentProvider {
      */
     @Override
     public boolean onCreate() {
-        // TODO: Create and initialize a PetDbHelper object to gain access to the pets database.
-        // Make sure the variable is a global variable, so it can be referenced from other
-        // ContentProvider methods.
+        DbHelper = new PetDBHelper(getContext());
         return true;
     }
 
