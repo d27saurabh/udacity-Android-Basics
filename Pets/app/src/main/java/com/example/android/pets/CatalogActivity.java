@@ -112,16 +112,16 @@ public class CatalogActivity extends AppCompatActivity {
                 PetEntry.COLUMN_PET_GENDER,
                 PetEntry.COLUMN_PET_WEIGHT
         };
-        Cursor cursor = db.query(
-                PetEntry.TABLE_NAME,
-                projection,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null
-        );
+//        Cursor cursor = db.query(
+//                PetEntry.TABLE_NAME,
+//                projection,
+//                null,
+//                null,
+//                null,
+//                null,
+//                null,
+//                null
+//        );
 
         TextView displayView = (TextView) findViewById(R.id.text_view_pet);
 
