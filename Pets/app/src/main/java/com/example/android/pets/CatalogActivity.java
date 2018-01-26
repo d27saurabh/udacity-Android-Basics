@@ -35,7 +35,9 @@ import com.example.android.pets.data.PetDBHelper;
  */
 public class CatalogActivity extends AppCompatActivity {
 
-    private PetDBHelper mDbHelper;
+    // To access our database, we instantiate our subclass of SQLiteOpenHelper
+    // and pass the context, which is the current activity.
+    private PetDBHelper mDbHelper = new PetDBHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +83,6 @@ public class CatalogActivity extends AppCompatActivity {
     }
 
     private void insertPet() {
-        mDbHelper = new PetDBHelper(this);
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -98,13 +99,6 @@ public class CatalogActivity extends AppCompatActivity {
      * the pets database.
      */
     private void displayDatabaseInfo() {
-        // To access our database, we instantiate our subclass of SQLiteOpenHelper
-        // and pass the context, which is the current activity.
-        mDbHelper = new PetDBHelper(this);
-
-        // Create and/or open a database to read from it
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
-
         String[] projection = {
                 PetEntry._ID,
                 PetEntry.COLUMN_PET_NAME,
@@ -112,16 +106,8 @@ public class CatalogActivity extends AppCompatActivity {
                 PetEntry.COLUMN_PET_GENDER,
                 PetEntry.COLUMN_PET_WEIGHT
         };
-//        Cursor cursor = db.query(
-//                PetEntry.TABLE_NAME,
-//                projection,
-//                null,
-//                null,
-//                null,
-//                null,
-//                null,
-//                null
-//        );
+
+        Cursor cursor = getContentResolver().query(PetEntry.CONTENT_URI , projection, null,null,null);
 
         TextView displayView = (TextView) findViewById(R.id.text_view_pet);
 
