@@ -104,10 +104,10 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             setTitle(getString(R.string.editor_activity_title_new_pet));
         } else {
             setTitle(getString(R.string.edit_pet_title));
-        }
 
-        // Initialize a loader to read the pet data from the database and display the current values in the editor
-        getLoaderManager().initLoader(EXISTING_PET_LOADER, null, this);
+            // Initialize a loader to read the pet data from the database and display the current values in the editor
+            getLoaderManager().initLoader(EXISTING_PET_LOADER, null, this);
+        }
 
         // Find all relevant views that we will need to read user input from
         mNameEditText = (EditText) findViewById(R.id.edit_pet_name);
@@ -236,6 +236,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
     @Override
     public void onBackPressed() {
         // If the pet hasn't changed, continue with handling back button press
@@ -336,6 +337,10 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+        if (data == null || data.getCount() < 1) {
+            return;
+        }
+
         if (data.moveToFirst()) {
             // Find the columns of pet attributes that we're interested in
             int nameColumnIndex = data.getColumnIndex(PetEntry.COLUMN_PET_NAME);
