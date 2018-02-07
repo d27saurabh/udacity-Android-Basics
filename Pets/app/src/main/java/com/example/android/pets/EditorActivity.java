@@ -181,7 +181,18 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         String Iname = mNameEditText.getText().toString().trim();
         String Ibreed = mBreedEditText.getText().toString().trim();
         String weight = mWeightEditText.getText().toString();
-        int Iweight = Integer.parseInt(weight);
+        int Iweight = 0;
+        if (!TextUtils.isEmpty(weight)) {
+            Iweight = Integer.parseInt(weight);
+        }
+        
+        if(mCurrentPetUri == null
+                && TextUtils.isEmpty(Iname)
+                && TextUtils.isEmpty(Ibreed)
+                && TextUtils.isEmpty(weight)
+                && mGender == PetEntry.GENDER_UNKNOWN){
+            return;
+        }
 
         PetDBHelper mDbHelper = new PetDBHelper(this);
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
