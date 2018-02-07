@@ -105,7 +105,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
             // Invalidate the options menu, so the "Delete" menu option can be hidden.
             // (It doesn't make sense to delete a pet that hasn't been created yet.)
-            invalidateOptionsMenu();
+            invalidateOptionsMenu(); // this method invokes the onPrepareOptionsMenu being called (again) so you can dynamically (at runtime) change menu items
         } else {
             setTitle(getString(R.string.edit_pet_title));
 
