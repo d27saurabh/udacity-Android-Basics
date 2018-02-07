@@ -99,8 +99,8 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         setContentView(R.layout.activity_editor);
 
         Intent intent = getIntent();
-        Uri contentUri = intent.getData();
-        if (contentUri == null) {
+        mCurrentPetUri = intent.getData();
+        if (mCurrentPetUri == null) {
             setTitle(getString(R.string.editor_activity_title_new_pet));
         } else {
             setTitle(getString(R.string.edit_pet_title));
